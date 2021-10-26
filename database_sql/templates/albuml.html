@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %} 
+<h1> Mugician List</h1>
+<h3>Arist name:{{arist_info.first_name}}{{arist_info.last_name}}</h3><br>
+<h3>instument:{{arist_info.instument}}{{arist_info.id}}</h3>
+<a href="{% url 'editview'  a_id=arist_info.id %}" class="btn btn-primary btn-sm">Edit</a>
+
+<h1>Album list:<h1>
+{% for ablum in album_list %}
+
+<h3><a href="{% url 'edit_album' b_id=ablum.id %}">{{ablum.name}}</a></h3>
+<h3>Type:{{ablum.Type}}</h3>
+{% endfor %}
+
+<br>
+<a href="{% url 'mdelectview' ab_id=arist_info.id   %}" class="btn btn-danger btn-sm" onclick="return confirm('delet this album')">Delect </a>
+
+{% endblock body %}

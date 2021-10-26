@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %} 
+<h1> Album From:</h1>
+<form method="POST">
+{{aform.as_p}}
+{% csrf_token %}
+<input type="submit" name="submit" value="Add" class="btn btn-primary">
+</form>
+
+{% endblock body %}

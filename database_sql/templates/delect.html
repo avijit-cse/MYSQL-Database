@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %} 
+<div class="alert alert-danger"> {{delete_sucess}}</div>
+<form method="POST">
+{{form.as_p}}
+{% csrf_token %}
+<input type="submit" name="submit" value="Delect" class="btn btn-primary">
+</form>
+{% endblock body %}
